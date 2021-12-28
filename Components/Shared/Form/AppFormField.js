@@ -2,10 +2,9 @@ import React from 'react'
 import AppField from '../AppField'
 import {useFormikContext} from 'formik'
 import {View,StyleSheet,Text} from 'react-native'
-
+import AppFormError from './AppFormError'
 const AppFormField=({name,...props})=>{
     const {handleChange,handleBlur,errors,values,touched}=useFormikContext()
-
     return(
         <View style={styles.container}>
             <AppField

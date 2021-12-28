@@ -1,6 +1,6 @@
 import React from 'react'
-import {View,Text,StyleSheet,Image} from 'react-native'
-
+import {View,Text,StyleSheet,Image,TouchableOpacity} from 'react-native'
+import Ionicons from 'react-native-vector-icons/Ionicons'
 const ListItem=({title,subtitle,image,IconImage,...props})=>{
     return(
         <View style={[styles.listContiner,props.style]}>
@@ -9,12 +9,13 @@ const ListItem=({title,subtitle,image,IconImage,...props})=>{
               image&&(<Image source={image} resizeMode='cover' style={styles.image}/>)
           }   
            <View style={styles.listContent}>
-               <Text style={styles.title}>{title}</Text>
-                {
-                  subtitle&&( <Text style={styles.subtitle}>{subtitle}</Text>)
-                }
-              
+               <Text style={styles.title}   numberOfLines={1}>{title}</Text>
+                {subtitle&&( <Text style={styles.subtitle}   numberOfLines={2}>{subtitle}</Text>)}            
            </View>
+           <TouchableOpacity >
+             <Ionicons name='chevron-forward-outline' size={20} color='gray'/>
+           </TouchableOpacity>
+          
         </View>
     )
 
@@ -24,7 +25,8 @@ const styles=StyleSheet.create({
         padding:10,
         flexDirection:'row',
         alignItems:'center',
-        backgroundColor:'white'
+        backgroundColor:'white',
+      
     },
     image:{
       width: 80,
@@ -32,7 +34,8 @@ const styles=StyleSheet.create({
       borderRadius:50
     },
     listContent:{
-       marginLeft:10
+       marginLeft:10,
+       marginRight:'auto'
     },
     title:{
         fontWeight:'700',

@@ -10,7 +10,7 @@ import RegisterScreen from './Screens/RegisterScreen';
 import ListingEditingScreen from './Screens/ListingEditingScreen';
 export default function App() {
   return (
-   <ListingEditingScreen/>
+    <ListingEditingScreen/>
   );
 }
 

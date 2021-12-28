@@ -2,9 +2,9 @@ import React from 'react'
 import {View, TextInput,StyleSheet } from 'react-native'
 import colorSchema from '../../configs/color'
 import Ionicons from 'react-native-vector-icons/Ionicons'
-const AppField=({iconText,...props})=>{
+const AppField=({iconText,width='100%',...props})=>{
     return(
-        <View style={styles.container}>
+        <View style={[styles.container,{width}]}>
             {iconText&&(<Ionicons width={30} height={30} name={iconText} color='gray' size={25} />)}
             <TextInput 
               style={styles.textField}
